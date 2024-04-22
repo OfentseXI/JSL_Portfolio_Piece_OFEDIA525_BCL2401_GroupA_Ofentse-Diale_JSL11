@@ -1,6 +1,7 @@
 // TASK: import helper functions from utils
 // TASK: import initialData
 
+import { initialData } from "./initialData";
 
 /*************************************************************************************************************************************************
  * FIX BUGS!!!
