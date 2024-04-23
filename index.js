@@ -11,7 +11,7 @@ import {  getTasks, saveTasks, createNewtask, deleteTask, patchTask, putTask } f
 // Function checks if local storage already has data, if not it loads initialData to localStorage
 function initializeData() {
   if (!localStorage.getItem('tasks')) {
-    localStorage.setItem('tasks', JSON.stringify(initializeData)); 
+    localStorage.setItem('tasks', JSON.stringify(initialData)); 
     localStorage.setItem('showSideBar', 'true')
   } else {
     console.log('Data already exists in localStorage');
@@ -20,12 +20,15 @@ function initializeData() {
 
 // TASK: Get elements from the DOM
 const elements = {
-document.getElementById() 
-document.getElementById() 
-document.getElementById() 
-document.getElementById() 
-document.getElementById() 
-document.getElementById() 
+  sideBar: document.getElementById('side-bar-div'),
+  hideSideBarBtn: document.getElementById('hide-side-bar-btn'),
+  showSideBarBtn: document.getElementById('show-side-bar-btn'),
+  themeToggleCheckbox: document.getElementById('switch'),
+  headerBoardName: document.getElementById('header-board-name'),
+  createNewTaskBtn: document.getElementById('add-new-task-btn'),
+  editTaskModal: document.querySelector('.edit-task-modal-window'),
+  modalWindow: document.getElementById('new-task-modal-window'),
+  filterDiv: document.getElementById('filterDiv')
 }
 
 let activeBoard = ""
