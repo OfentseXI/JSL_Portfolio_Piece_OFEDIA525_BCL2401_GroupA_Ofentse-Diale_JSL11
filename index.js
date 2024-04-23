@@ -19,7 +19,7 @@ function initializeData() {
 
 // TASK: Get elements from the DOM
 const elements = {
-d)
+   document.getElementById("todo-head-div")
 }
 
 let activeBoard = ""
