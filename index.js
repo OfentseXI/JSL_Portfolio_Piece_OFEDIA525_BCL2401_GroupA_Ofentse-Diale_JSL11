@@ -245,24 +245,29 @@ function toggleTheme() {
   }
 }
 
-
-
 function openEditTaskModal(task) {
   // Set task details in modal inputs
   // Get button elements from the task modal
-  function styleActiveBoard(boardName) {
-    document.querySelectorAll('.board-btn').forEach(btn => {
-      if (btn.textContent === boardName) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-  }
+  elements.editTaskTitleInput.value = task.title;
+  elements.editSelectStatus.value = task.status;
+  elements.editTaskDescInput.value = task.description;
+
   // Call saveTaskChanges upon click of Save Changes button
+  elements.saveTaskChangesBtn.onclick = () => {
+    saveTaskChanges(task.id);
+    toggleModal(false, elements.editTaskModal);
+    refreshTasksUI();
+  };
+
   // Delete task using a helper function and close the task modal
-  toggleModal(true, elements.editTaskModal); // Show the edit task modal
-}
+  elements.deleteTaskBtn.onclick = () => {
+    deleteTask(task.id);
+      toggleModal(false, elements.editTaskModal);
+      refreshTasksUI(); 
+    }
+    toggleModal(true, elements.editTaskModal); // Show the edit task modal
+  };
+  
 
 function saveTaskChanges(taskId) {
   // Get new user inputs
