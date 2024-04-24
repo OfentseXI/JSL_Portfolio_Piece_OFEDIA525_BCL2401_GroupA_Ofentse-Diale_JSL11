@@ -1,22 +1,20 @@
 // TASK: import helper functions from utils
 // TASK: import initialData
 
-import { initialData } from "./initialData";
-import {  getTasks, saveTasks, createNewtask, deleteTask, patchTask, putTask } from "./utils/taskFunctions";
+import { initialData } from "./initialData.js";
+import {  getTasks, saveTasks, createNewtask, deleteTask, patchTask, putTask } from "./utils/taskFunctions.js";
 
-/*************************************************************************************************************************************************
- * FIX BUGS!!!
- * **********************************************************************************************************************************************/
 
 // Function checks if local storage already has data, if not it loads initialData to localStorage
 function initializeData() {
   if (!localStorage.getItem('tasks')) {
     localStorage.setItem('tasks', JSON.stringify(initialData)); 
-    localStorage.setItem('showSideBar', 'true')
+    localStorage.setItem('showSideBar', 'false')
   } else {
     console.log('Data already exists in localStorage');
   }
 }
+initializeData();
 
 // TASK: Get elements from the DOM
 const elements = {
