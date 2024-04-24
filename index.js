@@ -270,34 +270,23 @@ function openEditTaskModal(task) {
   
 
 function saveTaskChanges(taskId) {
-  // Get new user inputs
-  function refreshTasksUI() {
-    filterAndDisplayTasksByBoard(activeBoard);
-  }
-  // Create an object with the updated task details
-  // Update task using a helper function  
-function addTaskToUI(task) {
-  const column = document.querySelector(`.column-div[data-status="${task.status}"]`);
-  if (!column) {
-    console.error(`Column not found for status: ${task.status}`);
-    return;
-  }
+ // Create an object with the updated task details
+ const updatedTask = {
+  board: activeBoard,
+  description: elements.editTaskDescInput.value,
+  id: taskId,
+  status: elements.editSelectStatus.value,
+  title: elements.editTaskTitleInput.value
+};
 
-  let tasksContainer = column.querySelector('.tasks-container');
-  if (!tasksContainer) {
-    console.warn(`Tasks container not found for status: ${task.status}, creating one.`);
-    tasksContainer = document.createElement('div');
-    tasksContainer.className = 'tasks-container';
-    column.appendChild(tasksContainer);
-    }
+// Update task using a helper functoin
+putTask(taskId, updatedTask);
 
-  const taskElement = document.createElement('div');
-  taskElement.className = 'task-div';
-  taskElement.textContent = task.title;
-  taskElement.setAttribute('data-task-id', task.id);
-
-  tasksContainer.appendChild(taskElement);
+// Close the modal and refresh the UI to reflect the changes
+toggleModal(false, elements.editTaskModal);
+refreshTasksUI();
 }
+
 
 
 /*************************************************************************************************************************************************/
