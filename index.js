@@ -154,24 +154,21 @@ function addTaskToUI(task) {
 
   const taskElement = document.createElement('div');
   taskElement.className = 'task-div';
-  taskElement.textContent = task.title; // Modify as needed
+  taskElement.textContent = task.title;
   taskElement.setAttribute('data-task-id', task.id);
-  
   tasksContainer.appendChild(); 
 }
-
-
 
 function setupEventListeners() {
   // Cancel editing task event listener
   const cancelEditBtn = document.getElementById('cancel-edit-btn');
-  cancelEditBtn.click(); toggleModal(false, elements.editTaskModal);
+  cancelEditBtn.onclick = () => toggleModal(false, elements.editTaskModal);
 
   // Cancel adding new task event listener
   const cancelAddTaskBtn = document.getElementById('cancel-add-task-btn');
   cancelAddTaskBtn.addEventListener('click', () => {
     toggleModal(false);
-    elements.filterDiv.style.display = 'none'; // Also hide the filter overlay
+    elements.filterDiv.style.display = 'none';
   });
 
   // Clicking outside the modal to close it
@@ -181,8 +178,8 @@ function setupEventListeners() {
   });
 
   // Show sidebar event listener
-  elements.hideSideBarBtn.click(); toggleSidebar(false);
-  elements.showSideBarBtn.click(); toggleSidebar(true);
+  elements.hideSideBarBtn.onclick(); toggleSidebar(false);
+  elements.showSideBarBtn.onclick(); toggleSidebar(true);
 
   // Theme switch event listener
   elements.themeSwitch.addEventListener('change', toggleTheme);
@@ -190,7 +187,7 @@ function setupEventListeners() {
   // Show Add New Task Modal event listener
   elements.createNewTaskBtn.addEventListener('click', () => {
     toggleModal(true);
-    elements.filterDiv.style.display = 'block'; // Also show the filter overlay
+    elements.filterDiv.style.display = 'block'; 
   });
 
   // Add new task form submission event listener
@@ -200,7 +197,6 @@ function setupEventListeners() {
 }
 
 // Toggles tasks modal
-// Task: Fix bugs
 function toggleModal(show, modal = elements.modalWindow) {
   modal.style.display = show ? 'block' : 'none'; 
 }
