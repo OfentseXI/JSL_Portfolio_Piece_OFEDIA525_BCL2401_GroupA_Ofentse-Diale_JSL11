@@ -215,7 +215,7 @@ function addTask(event) {
   if (newTask) {
     addTaskToUI(newTask);
     toggleModal(false);
-    elements.filterDiv.style.display = 'none'; // Also hide the filter overlay
+    elements.filterDiv.style.display = 'none';
     event.target.reset();
     refreshTasksUI();
   } 
@@ -223,7 +223,9 @@ function addTask(event) {
 
 
 function toggleSidebar(show) {
- 
+  elements.sideBar.style.display = show ? 'block' : 'none';
+  elements.showSideBarBtn.style.display = show ? 'none' : 'block';
+  localStorage.setItem('showSideBar', show);
 }
 
 function toggleTheme() {
