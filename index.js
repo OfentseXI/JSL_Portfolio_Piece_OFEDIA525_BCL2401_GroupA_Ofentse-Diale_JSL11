@@ -18,15 +18,39 @@ initializeData();
 
 // TASK: Get elements from the DOM
 const elements = {
-  sideBar: document.getElementById('side-bar-div'),
-  hideSideBarBtn: document.getElementById('hide-side-bar-btn'),
-  showSideBarBtn: document.getElementById('show-side-bar-btn'),
-  themeToggleCheckbox: document.getElementById('switch'),
-  headerBoardName: document.getElementById('header-board-name'),
-  createNewTaskBtn: document.getElementById('add-new-task-btn'),
-  editTaskModal: document.querySelector('.edit-task-modal-window'),
-  modalWindow: document.getElementById('new-task-modal-window'),
-  filterDiv: document.getElementById('filterDiv')
+  boardsNavLinksDiv: document.getElementById("boards-nav-links-div"),
+  themeSwitch: document.getElementById("switch"),
+  hideSideBarBtn: document.getElementById("hide-side-bar-btn"),
+  showSideBarBtn: document.getElementById("show-side-bar-btn"),
+  sideBar: document.querySelector(".side-bar"),
+  sideBarBottom: document.querySelector(".side-bar-bottom"),
+  
+  columnDivs: document.querySelectorAll(".column-div"),
+  
+  headerBoardName: document.getElementById("header-board-name"),
+  dropDownBtn: document.getElementById("dropdownBtn"),
+  createNewTaskBtn: document.getElementById("add-new-task-btn"),
+  deleteBoardBtn: document.getElementById("deleteBoardBtn"),
+  editBoardBtn: document.getElementById("edit-board-btn"),
+
+  modalWindow: document.getElementById("new-task-modal-window"),
+  titleInput: document.getElementById("title-input"),
+  descriptionInput: document.getElementById("desc-input"),
+  selectStatus: document.getElementById("select-status"),
+  createTaskBtn: document.getElementById("create-task-btn"),
+  cancelAddTaskBtn: document.getElementById("cancel-add-task-btn"),
+
+  editTaskModal: document.querySelector(".edit-task-modal-window"),
+  editTaskForm: document.getElementById("edit-task-form"),
+  editTaskTitleInput: document.getElementById("edit-task-title-input"),
+  editBtn: document.getElementById("edit-btn"),
+  editTaskDescInput: document.getElementById("edit-task-desc-input"),
+  editSelectStatus: document.getElementById("edit-select-status"),
+  saveTaskChangesBtn: document.getElementById("save-task-changes-btn"),
+  cancelEditBtn: document.getElementById("cancel-edit-btn"),
+  deleteTaskBtn: document.getElementById("delete-task-btn"),
+
+  filterDiv: document.getElementById("filterDiv"),
 }
 
 let activeBoard = ""
