@@ -226,34 +226,51 @@ function toggleTheme() {
 
 function openEditTaskModal(task) {
   // Set task details in modal inputs
-  
-
   // Get button elements from the task modal
-
-
+  function styleActiveBoard(boardName) {
+    document.querySelectorAll('.board-btn').forEach(btn => {
+      if (btn.textContent === boardName) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
   // Call saveTaskChanges upon click of Save Changes button
- 
-
   // Delete task using a helper function and close the task modal
-
-
   toggleModal(true, elements.editTaskModal); // Show the edit task modal
 }
 
 function saveTaskChanges(taskId) {
   // Get new user inputs
-  
-
+  function refreshTasksUI() {
+    filterAndDisplayTasksByBoard(activeBoard);
+  }
   // Create an object with the updated task details
+  // Update task using a helper function  
+function addTaskToUI(task) {
+  const column = document.querySelector(`.column-div[data-status="${task.status}"]`);
+  if (!column) {
+    console.error(`Column not found for status: ${task.status}`);
+    return;
+  }
 
+  let tasksContainer = column.querySelector('.tasks-container');
+  if (!tasksContainer) {
+    console.warn(`Tasks container not found for status: ${task.status}, creating one.`);
+    tasksContainer = document.createElement('div');
+    tasksContainer.className = 'tasks-container';
+    column.appendChild(tasksContainer);
+    }
 
-  // Update task using a hlper functoin
- 
+  const taskElement = document.createElement('div');
+  taskElement.className = 'task-div';
+  taskElement.textContent = task.title;
+  taskElement.setAttribute('data-task-id', task.id);
 
-  // Close the modal and refresh the UI to reflect the changes
-
-  refreshTasksUI();
+  tasksContainer.appendChild(taskElement);
 }
+
 
 /*************************************************************************************************************************************************/
 
