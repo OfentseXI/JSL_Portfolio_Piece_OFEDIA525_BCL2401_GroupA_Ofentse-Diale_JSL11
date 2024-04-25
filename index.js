@@ -57,7 +57,7 @@ const elements = {
 
 //Styling for sidebar element(hide sidebar and theme toggle buttons)
 document.getElementById("boards-nav-links-div").style.marginTop = "50px";
-document.getElementById("boards-nav-links-div").style.marginBottom = "100px"
+document.getElementById("boards-nav-links-div").style.marginBottom = "250px"
 
 //Objects for status selection
 const statusSelection = {
