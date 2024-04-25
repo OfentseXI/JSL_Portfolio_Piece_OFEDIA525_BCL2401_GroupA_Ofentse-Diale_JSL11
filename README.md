@@ -1,6 +1,6 @@
 ### [JSL11] Agile Board - Kanban Task Management App
 
-loom video link:
+loom video link:  https://www.loom.com/share/6c85a8e7c1f94e8f84e95217dfaada70?sid=1fccded4-d04f-40e6-a5f4-40a758f4d62f
 
 # Project Overview
 With the use of user stories the objective of the project is to create an Agile Board - Kanban Task Management app with the specifications laid out in the user stories. The Purpose of the application is to add and manage multiple tasks.
